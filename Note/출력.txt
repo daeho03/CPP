@@ -25,3 +25,9 @@ using
 <<연산자
 	+ 혹은 - 등과 같은 연산자 중 하나
 	C++에서는 프로그래머가 연산자의 동작을 바꿀 수 있다
+	cout << "hello, world" <<  endl << 123 << endl;
+		이런 식으로 endl여러번 넣어쓸 수 있다
+출력형식 지정(Output Formatting)
+	16진수 출력
+		int num = 10;
+		cout << showbase << hex << num << endl;
