@@ -31,3 +31,35 @@ using
 	16진수 출력
 		int num = 10;
 		cout << showbase << hex << num << endl;
+조정자
+	showpos/noshowpos
+		showpos +부호있음
+		noshowpos +부호없음
+	dex/hex/oct
+		진수
+	uppercase/nouppercase
+		uppercase 대문자로
+		nouppercase 대문자로x
+	showbase/noshowbase
+		showbase 진법 표기
+		noshowbase 진법 표기x
+	left/internal/right
+		left 왼쪽 정렬
+		internal 숫자는 오른쪽, 부호는 왼쪽 정렬
+		right 오른쪽 정렬
+	showpoint/noshowpoint
+		showpoint
+			소수점 3자리까지 출력
+		noshowpoint
+			소수점x
+	fixed/scientific
+		fixed 고정
+	boolalpha/noboolalpha
+		boolalpha
+			true/false로 출력
+		noboolalpha
+			0/1로  출력
+	<iomanip>안에 있는 조정자
+		setw() 컬럼수 지정
+		setfill() 빈공간에 넣을 문자 지정
+		setprecision() 소수점 출력시 보여줄 숫자 크기 지정
