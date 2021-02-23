@@ -53,7 +53,7 @@ using
 		noshowpoint
 			소수점x
 	fixed/scientific
-		fixed 고정
+		fixed 고정 소수점
 	boolalpha/noboolalpha
 		boolalpha
 			true/false로 출력
@@ -61,5 +61,8 @@ using
 			0/1로  출력
 	<iomanip>안에 있는 조정자
 		setw() 컬럼수 지정
-		setfill() 빈공간에 넣을 문자 지정
+		setfill() 빈공간에 넣을 문자 지정(사용 후 초기화)
 		setprecision() 소수점 출력시 보여줄 숫자 크기 지정
+cout 멤버 메서드도 있음
+	네임스페이스 ios_base
+	거의 사용안함
