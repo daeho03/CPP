@@ -1,0 +1,46 @@
+입력
+	scanf()
+		경계검사를 하지 않아 소유하지 않은 메모리를 건들일수 있어 위험함
+	cin
+		char str[10];
+		cin >> str;
+		경계검사를 마찬가지로 안하는데 setw()로 받아오는 길이를 간단하게 정해줄 수 있음
+스트림 상태
+	istream 상태
+		네임스페이스 - ios_base
+		비트 플래그
+			goodbit
+			eofbit
+			failbit
+			badbit
+		메소드 버전
+			good()
+			eof()
+			fail()
+			bad()
+	예제
+		int number;
+		cin >> number;
+	입력값
+		456abc
+			eofbit : unset, failbit : unset
+			456까지 읽고 멈춤 숫자를 읽었기에 failbit unset
+		456
+			eofbit : (un)set, failbit : unset
+		abc
+			eofbit : unset, failbit : set
+		eof
+			eofbit : set, failbit : set
+입력 버리기(Discarding Input)
+	clear()
+		스트림을 good state로 돌려 줌
+		cin.clear();
+	ignore()
+		두번째 인자로 뉴라인 문자를 넣으면  뉴라인 문자를 버리면 멈춤
+	get()
+		3번째 인자를 따로 설정 안하면 뉴라인이 기본
+		뉴라인 문자를 만나기 직전까지의 모든 문자를 가져옴
+		뉴라인 문자는 입력 스트림에 남아 있음
+	getline()
+		뉴라인 문자를 만나기 직전까지의 모든 문자를 가져옴
+		뉴라인 문자는 입력 스트림에서 버림
