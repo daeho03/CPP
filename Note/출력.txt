@@ -66,3 +66,5 @@ using
 cout 멤버 메서드도 있음
 	네임스페이스 ios_base
 	거의 사용안함
+#pragma once
+	include 한 번만
