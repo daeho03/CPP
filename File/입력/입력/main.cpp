@@ -42,7 +42,7 @@ void ReverseInputString() {
 		cin.clear();
 		return;
 	}
-	
+
 	char* p = line;
 	char* q = line + strlen(line) - 1;
 
