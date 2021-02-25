@@ -1,0 +1,12 @@
+std::string 클래스
+	std::string 클래스를 이용한 문자열은 길이가 증가할 수 있음
+	부호를 써서 대입과 덧붙이기가 안전하게 가능
+	비교 연산이 편해짐
+	size(), length()
+		문자열의 길이를 반환
+	c_str()
+		const char*
+		해당 string이 가지고 있는 문자 배열의 시작 주소를 가리키는 포인터를 반환
+			string line;
+			cin >> line;
+			const char* cLine = line.c_str();
