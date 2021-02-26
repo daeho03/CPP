@@ -4,9 +4,34 @@ std::string 클래스
 	비교 연산이 편해짐
 	size(), length()
 		문자열의 길이를 반환
+		length()는 문자열의 길이를 반환하는 메소드
+		size()는 해당 string개체가 메모리에서 실제 사용하고 있는 크기를 반환하는 메소드
 	c_str()
 		const char*
 		해당 string이 가지고 있는 문자 배열의 시작 주소를 가리키는 포인터를 반환
 			string line;
 			cin >> line;
 			const char* cLine = line.c_str();
+	sstream
+		cout, cin도 스트림
+		std::istringstream
+			cin과 비슷 : 키보드 대신 string으로부터 읽어옴
+			sscnaf()와 비슷
+		std::ostringstream
+			cout와 비슷 : 콘솔 대신 string에 출력
+			sprintf()와 비슷
+	string클래스 내부 동작
+		용량 할당
+		용량이 부족하면 "새"로 메모리를 받음
+		복사하고 예전 메모리를 지우고 포인터를 새 메모리로 바꿈
+		새 메모리에 복사하고 추가
+	힙 메모리 할당은 느림
+	메모리 단편화(memory fragmentation) 문제
+	내부 버퍼의 증가는 멀티 쓰레드 환경에서 안전하지 않을 수 있다
+	그래서 여전히 sprintf()와 char[]을 많이 씀
+C헤더를 C++에서도 사용해도 됨
+	현업의 C++ 애플리케이션에서는 성능 상의 이유로 많은 c함수들을 사용
+	c		c++
+	<string.h> -> 	<cstring>
+	<stdio.h> -> 	<cstdio>
+	<ctype.h> -> 	<cctype>
