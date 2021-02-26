@@ -17,13 +17,14 @@ std::string 클래스
 		std::istringstream
 			cin과 비슷 : 키보드 대신 string으로부터 읽어옴
 			sscnaf()와 비슷
+			문자열 포맷을 parsing 할 때 사용
 		std::ostringstream
 			cout와 비슷 : 콘솔 대신 string에 출력
 			sprintf()와 비슷
 	string클래스 내부 동작
 		용량 할당
 		용량이 부족하면 "새"로 메모리를 받음
-		복사하고 예전 메모리를 지우고 포인터를 새 메모리로 바꿈
+		복사하고 예전 메모리를 지우고 포인터를 새 메모리의 시작 주소로 바꿈
 		새 메모리에 복사하고 추가
 	힙 메모리 할당은 느림
 	메모리 단편화(memory fragmentation) 문제
