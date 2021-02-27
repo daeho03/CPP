@@ -7,6 +7,8 @@ void Foo();
 
 int main() {
 	Foo(); // 함수 호출
+
+	return 0;
 }
 
 void Foo() {

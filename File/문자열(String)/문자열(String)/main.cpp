@@ -17,6 +17,8 @@ int main(){
 	Oss();
 	cout << "MirrorString() È£Ãâ" << endl;
 	MirrorString();
+
+	return 0;
 }
 
 void Iss(){

@@ -38,4 +38,6 @@ int main() {
 	cout << dec << "    left정렬 : " << setw(6) << left <<  num << endl;
 	cout << "internal정렬 : "  << setw(6) << internal << -num << endl;
 	cout << "   right정렬 : " << setw(6) << right << num << endl;
+
+	return 0;
 }

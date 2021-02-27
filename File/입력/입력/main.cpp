@@ -29,6 +29,8 @@ int main() {
 	cout << "-----------------------------" << endl;
 
 	ReverseInputString();
+
+	return 0;
 }
 
 void ReverseInputString() {

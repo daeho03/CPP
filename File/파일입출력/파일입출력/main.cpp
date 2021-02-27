@@ -7,6 +7,8 @@ void Read();
 
 int main() {
 	Read();
+
+	return 0;
 }
 
 void Read() {
