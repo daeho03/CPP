@@ -1,89 +1,46 @@
-표준 템플릿 라이브러리 컨테이너(STL Container)
-	STL 컨테이너 목록
-		벡터(vector)
-		맵(map)
-		셋(set)
-		스택(stack)
-		큐(queue)
-		리스트(list)
-		덱(디큐, deque)
-		...
-	STL 컨테이너의 목적
-		템플릿 기반
-		모든 컨테이너에 적용되는 표준 인터페이스
-		메모리 자동 관리
-	벡터(vector)
-		어떤 자료형도 넣을 수 있는 동적 배열
-			기본(primitive) 데이터
-			클래스(class)
-			포인터(pointer)
-		그 안에 저장된 모든 요소들이 연속된 메모리 공간에 위치
-		요소 수가 증가함에 따라 자동으로 메모리를 관리해 줌
-		어떤 요소에도 임의로 접근(random access) 가능
-		vector 변수를 만드는 법
-			1. std::vector<<type>><name>;
-			2. std::vector<<type>><name>(const vector& x);
-				x라는 vector와 같은 크기(size) 및 데이터를 같은 벡터를 생성
-			3. std::vector<<type>><name>(<size>);	// 거의 쓰지 않음
-				크기(size)를 지정하여 vector를 생성한다(모든 요소의 값은 0)
-		제일 마지막에 요소 추가하기
-			.push_back(<data>);
-		제일 마지막에 있는 요소 제거하기
-			.pop_back();
-			vector의 맨 뒤에 있는 요소를 제거
-		용량(capacity)과 크기(size)
-			.capacity();
-				vector에 할당된 요소 공간 수(메모리)
-			.size();
-				vector에 실제로 들어 있는 요소 수
-		vector의 용량 늘리기
-			.reserve(<size>);	// 불필요한 재할당을 막기 위해 vector를 생성한 직후에 이 함수를 호출할 것
-			vector의 용량을 늘림
-			용량이 증가해야 하면 새로운 저장 공간을 재할당하고 기존 요소들을 모두 새 공간으로 복사
-				배열과 마찬가지로 재할당 + 복사문제가 생길 수 있음
-		요소 하나에 접근하기
-			operator[](size_t n);
-			지정된 위치(n)의 요소를 참조로 반환한다.
-				대입이 되는 이유, 값을 반환했다면 대입을 해도 원본은 안 바뀌었을것
-			이 방식은 벡터에만 쓸 수 있음
-				맵(map)에서는 인덱스로 operator[]를 쓸 수 없음
-'				그래서, STL 컨테이너를 순회할 떄는 반복자(iterator)를 쓰는 게 표준 방식
-		반복자(iterator)
-			vector<<type>>iterator<name>
-				vector의 요소들을 순회하는 데 사용
-			begin()/end()
-				.begin();
-					vector의 첫 번째 요소를 가리키는 반복자를 반환
-				.end();
-					vector의 마지막 요소 바로 뒤의 요소를 가리키는 반복자를 반환
-			뒤에서 부터 접근하고 싶으면
-				역방향 반복자(reserve iterator)
-					reverse_iterator rbegin();
-						vector의 마지막 요소를 가리키는 역방향 반복자를 반환
-					reverse_iterator rend();
-						vector의 첫 번째 요소 앞의 "요소"를 가리키는 역방향 반복자를 반환
-		요소 대입하기
-			.assign(size_t n, <data>);
-				n개의 <data>를 vector에 넣어 줌
-		두 벡터 교환하기
-			.swap(vector& other);
-				같은 자료형의 두 벡터를 바꿈
-				size와 capacity, 가리키는 주소값만 바꾸는 것
-		벡터의 크기 변경하기
-			.resize(size_t n);
-				vector의 크기를 바꾼다
-				새 크기가 vector의 기존 크기보다 작으면, 초과분이 제거됨
-				새 크기가 vector의 용량보다 크면 재할당이 일어남
-		vector에서 모든 요소 제거하기
-			.clear()
-				vector를 지운다
-				크기(size)는 0이 되고 용량(capacity)은 변하지 않음
-		포인터 벡터
-			모든 요소에 대해 delete를 호출할 것
-				또한 지운 후에 이 포인터들을 사용하면 안 됨
-		벡터의 장점
-			순서에 상관 없이 요소에 임의적으로 접근 가능
-			제일 마지막 위치에 요소를 빠르게 삽입 및 삭제
-		벡터의 단점
-			중간에 요소 삽입 및 삭제는 느림
-			재할당 및 요소 복사에 드는 비용
+맵(Map)
+	키(key)와 값(value)의 쌍들을 저장
+	키는 중복될 수 없음
+	C++ 맵은 자동 정렬되는 컨테이너
+	이진 탐색 트리(binary search tree) 기반
+		오름차순
+	맵 생성
+		map<<key_type>, <value_type>><name>
+			빈 map 생성
+		map<<key_type>, <value_type>><name>(const map& x)
+			x라는 map과 같은 크기(size)와 데이터를 갖는 map을 생성
+		std::pair<key, value>
+			std::pair<first_type, second_type>
+				두 데이터를 한 단위로 저장하는 구조
+		insert()
+			std::pair<iterator, bool> insert(const value_type& value)
+				새 요소를 map에 삽입한다
+				반복자와 bool 값을 한 쌍으로 반환
+					반복자는 요소를 가리키고
+					Bool 값은 삽입 결과를 알려줌
+				키를 중복으로 삽입할 수 없음
+		operator[]
+			mapped_type& operator[](const key& key);
+				key에 대응하는 값을 참조로 반환한다
+				map에 키가 없으면 새 요소를 삽입
+				map에 키가 이미 있으면 그 값을 덮어씀
+	find()
+		iterator find(const Key& key);
+			map에서 key를 찾으면 그에 대응하는 값을 가리키는 반복자를 반환
+			못 찾으면 end()를 반환
+	swap(), clear()
+		void swap(map& other);
+			두 map의 키와 값을 서로 맞바꾼다
+		void clear();
+			map을 비운다
+	erase()
+		void erase(iterator position);
+		size_type erase(const key_type& key);
+		void erase(iterator firstm iterator last);
+			map의 요소들을 제거한다
+	맵의 장점
+		std::list나 std::vector보다 탐색 속도가 더 빠름
+	맵의 단점
+		자동으로 정렬됨
+		해쉬맵(hashmap)이 아님. 따라서 O(1)이 아님
+		C++11에 해결책이 있음
