@@ -1,0 +1,76 @@
+셋(Set)
+	정렬되는 컨테이너
+	중복되지 않는 키를 요소로 저장함
+	이진 탐색 트리 기반
+		오름차순
+	장점과 단점
+		맵과 같음
+큐(Queue)
+	큐 선언
+		queue<<type>><name>
+	선입 선출(FIFO) 자료구조
+	.empty()
+		비어있는지 확인하는 함수가 있음
+	요소 삽입
+		void push(const value_type& val);
+			queue의 맨 뒤에 새 요소를 삽입한다
+	요소 제거
+		void pop();
+			남아있는 요소 중 가장 먼저 들어온 요소를 제거
+	value_type& front();
+		가장 먼저 들어온 요소를 참조로 반환
+	value_type& back();
+		가장 마지막에 들어온 요소를 참조로 반환
+	size_type size();
+		queue에 들어 있는 요소의 수를 반환한다
+	bool empty();
+		queue가 비어 있으면 true를, 그렇지 않으면 false를 반환
+스택(Stack)
+	후입 선출(LIFO) 자료구조
+	요소 제거
+		void pop();
+			남아있는 요소 중 가장 마지막에 들어온 요소를 제거
+	value_type& top();
+		stack에 가장 마지막에 저장된 요소를 참조로 반환
+	나머지는 큐와 동일
+리스트(list)
+	양방향 연결 리스트(이중 연결 리스트)
+	operator[]가 없음
+	양쪽 끝에서 삽입/제거
+	요소 삽입
+		iterator insert(iterator position, const value_type& value);
+			position이 가리키는 위치에 새 요소 삽입
+		void push_front(const value_type& value);
+			제일 처음에 새 요소를 삽입
+		void push_back(const value_type& value);
+			제일 마지막에 새 요소를 삽입
+	요소 제거
+		void pop_front();
+			첫 번째 요소를 제거
+		void pop_back();
+			마지막 번째 요소를 제거
+		특정 요소 제거
+			iterator erase(iterator position);
+				position이 가리키는 위치의 요소를 제거
+			void remove(const value_type& value);
+				value와 값이 같은 요소를 전부 제거
+	리스트에서 사용할 수 있는 다른 메서드들
+		정렬, 합치기, 중복 제거, ···
+	리스트의 장점
+		삽입과 제거에 걸리는 시간 : O(1) // 위치를 알면
+		어느 위치든 삽입/제거 가능
+	리스트의 단점
+		탐색이 느린 편
+		임의적으로 접근 불가
+		메모리가 불연속적
+정리 안 된 STL컨테이너들 // 거의 안쓰는 컨테이너들
+	멀티셋(multi-set)
+		중복 키를 허용
+		요소를 수정하면 안 됨
+	멀티맵(multi-map)
+		중복 키를 허용
+	덱(디큐, deque)
+		Double-ended queue의 약자
+		양쪽 끝에서 요소 삽입과 삭제가 모두 가능
+	우선순위 큐(priority-queue)
+		자동 정렬되는 큐
