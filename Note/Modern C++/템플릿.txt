@@ -1,0 +1,12 @@
+템플릿(Template) 프로그래밍
+	템플릿
+		java와 C#에서의 제네릭(generic) 메서드/클래스와 비슷
+		STL 컨테이너 또한 템플릿
+		코드를 자료형마다 중복으로 작성하지 않아도 됨
+	함수 템플릿
+		template <class <type_name>> <function_def;
+		template <typename <type_name>> <function_def;
+			typename과 class는 사실상 별 차이가 없음
+		함수 템플릿을 호출할 때 템플릿 매개변수를 생략할 수 있음
+		템플릿에 넣는 자료형 가짓수에 비례해서 exe 파일 크기 증가
+		컴파일 타임에 어느정도 다형성을 부여할 수 있음 // 이거에 대해서는 뒤에서...
