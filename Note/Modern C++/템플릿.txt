@@ -1,4 +1,4 @@
-템플릿(Template) 프로그래밍
+﻿템플릿(Template) 프로그래밍
 	예전 컴파일러 중에 >>에서 에러가 나는 경우가 있음
 	템플릿
 		java와 C#에서의 제네릭(generic) 메서드/클래스와 비슷
@@ -45,7 +45,17 @@
 			각기 다른 서넛 이상의 자료형을 다룬다면 템플릿을 쓸 것
 			두가지 정도라면 클래스를 2개 만들 것
 STL 알고리듬(Algorithm)
+	STL 알고리듬 목록 주소(http:://www.cplusplus.com/referenct/algorithm)
 	요소 범위에서 쓸 수 있는 함수들
 	배열 또는 몇몇 STL 컨테이너에 쓸 수 있음
 	반복자를 통해 컨테이너에 접근
 	컨테이너의 크기를 변경하지 않음(따라서 추가 메모리 할당도 없음)
+	STL 알고리듬의 유형
+		변경 불가 순차(sequence) 연산 #include <algorithm>
+			find(), for_each(), ...
+		변경 가능 순차 연산 #include <algorithm>
+			copy(), swap(), ...
+		정렬 관련 연산 #include <algorithm>
+			sort(), merge(), ...
+		범용 수치 연산 // #include <numeric>
+			accumulate(), ...
