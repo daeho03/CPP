@@ -1,0 +1,26 @@
+nullptr
+	*NULL
+		#define NULL 0
+			숫자
+	typedef decltype(nullptr) nullptr_t;
+		null 포인터 상수
+	C++11 이후
+		포인터에는 언제나 nullptr를 쓸 것
+고정 폭 정수형
+	표준에서는 자료형들의 바이트 크기를 따로 지정해 주지 않음
+	C++11 부터 고정 폭 정수형이 지원 됨
+		int8_t/uint8_t
+			대부분 시스템에서는 char 자료형으로 처리하지만,
+				일부 시스템에서는 정수를 출력할 수도 있으니 int8_t/uint8_t의 사용을 피하는게 좋음
+		int16_t/uint16_t
+		int32_t/uint32_t
+		int64_t/uint64_t
+		int8_t/uint8_t
+		intptr_t/uintptr_t
+		...
+	가독성 향상을 위해 기존 자료형보다 고정 폭 정수형을 쓰는게 좋음
+enum class
+	C++11에서 제대로 지원
+	정수형으로의 암시적 캐스팅이 없음
+	자료형 검사
+	또한 enum에 할당할 바이트 양을 정할 수도 있음
