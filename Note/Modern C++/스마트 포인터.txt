@@ -98,3 +98,23 @@
 			nullptr를 대입하는 것과 같음
 		use_count()
 			원시 포인터를 참조하고 있는 std::shared_ptr의 갯수를 구함
+	weak_ptr
+		template <class U>
+		weak_ptr& operator= (const shared_ptr<U>& x) noexcept;
+		weak_ptr로 shared_ptr 만들기
+			std::shared<T> lock() const noexcept;
+				원시 포인터가 존재하면 공유 포인터를 만든다
+		shread_ptr가 존재하는지 확인
+			bool expried() const noexcept;
+				공유 포인터가 해제되었으면 true를 반환
+	std::shared_ptr, std::weak_ptr 정리
+		shared_ptr
+			강한 참조
+			강한 참조 카운트를 늘림
+			직접적으로 사용할 수 있음
+			원시 포인터가 확실히 존재하기 때문
+		weak_ptr
+			약한 참조
+			약한 참조 카운트를 늘림
+			직접적으로 사용할 수 없음
+			lock()을 써서 std::shared_ptr가 존재하는지 확인해야 함
