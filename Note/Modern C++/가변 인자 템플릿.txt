@@ -1,0 +1,10 @@
+가변 인자 템플릿
+	다양한 매개변수 개수와 자룔형을 지원하는 클래스 또는 함수 템플릿
+	매개변수 목록에서 생략부호(...)를 씀
+	가변 인자 템플릿 클래스
+		template<typename ... Arguments>
+		class <class_name>{...};
+	가변 인자 템플릿 함수
+		template<typename ... Arguments>
+		<return_type> <function_name> (Arguments ... args){}
+	make_unique(), make_shared(), printf() 등을 예로 들 수 있음
